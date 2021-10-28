@@ -1,11 +1,18 @@
-// import { Counter } from "./features/counter/Counter";
-
-import CounterContainer from "./containers/CounterContainer";
+import { Switch, Route } from "react-router-dom";
+import Pregame from "./components/Pregame";
+import Game from "./components/Game";
 
 function App() {
   return (
     <div className="App">
-      <CounterContainer />
+      <Switch>
+        <Route path="/" exact>
+          <Pregame />
+        </Route>
+        <Route path="/game">
+          <Game />
+        </Route>
+      </Switch>
     </div>
   );
 }
